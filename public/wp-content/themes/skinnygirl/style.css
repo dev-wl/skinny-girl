@@ -477,7 +477,7 @@ div#blog {
     -webkit0box-sizing: border-box;
     max-width: 924px;
     padding: 0px 20px;
-    margin: 25px auto 0; }
+    margin: 25px auto 0;  }
 
 .blog {
     width: 92%;
@@ -667,10 +667,10 @@ a.page-numbers:hover, span.page-numbers.current {
 .content {
     font-family: "Archer A", "Archer B", serif; }
 
-img.wp-post-image {
+/*img.wp-post-image {
     width:100%;
     height:auto;
-}
+}*/
 
 .blogpost h3 {
     font-family: "dancing_scriptregular"; 
@@ -691,7 +691,8 @@ img.wp-post-image {
 
 img.wp-post-image {
     width: 100%;
-    height: auto; }
+    height: auto;
+	margin-bottom: 25px; }
 
 #s0 .block .mainpage {
     width: 100% !important;

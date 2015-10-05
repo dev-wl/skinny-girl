@@ -28,12 +28,21 @@ body.fixed-menu #head-wrapper {
 		</div>
 		<div class="content">
 			<?php if (has_post_thumbnail()): ?>
-				<div class="content-image" style="width:30%; margin:0 auto;">
+				<div class="content-image" style="width:65%; margin:0 auto;">
 					<?php the_post_thumbnail(); ?>
+                    <!--Share This-->
+<span class='st_facebook_large' displayText='Facebook'></span>
+<span class='st_fblike_large' displayText='Facebook Like'></span>
+<span class='st_twitter_large' displayText='Tweet'></span>
+<span class='st_pinterest_large' displayText='Pinterest'></span>
+<span class='st_email_large' displayText='Email'></span>
+<span class="orientation-flag"></span>
+<!--End Share This-->
 				</div>
 			<?php endif; ?>
-
+<br>
 			<?php the_content(); ?>
+            
 		</div>
 	</div>
 <?php endwhile; ?>

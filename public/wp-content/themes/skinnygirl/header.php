@@ -8,10 +8,14 @@
 		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
-	</head> 
+	
+	<!--ShareThis-->
+	<script type="text/javascript">var switchTo5x=true;</script>
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "5eb19ab6-d271-4b96-a7cc-6da9b827c1d2", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+    <!--End Share This-->
+    </head> 
 <body>
-
-<span class="orientation-flag"></span>
 <script>
 	var recalcMenuHeight = function() {
 		$('#menu-wrapper .sliding-menu').height($(window).height());

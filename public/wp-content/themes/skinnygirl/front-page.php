@@ -348,9 +348,9 @@ $("#pgc-2-2-1").remove(); //removing the rest of page builder form the main page
 $("#pgc-2-3-0").remove(); //removing the rest of page builder form the main page
 $("#pgc-2-3-1").remove(); //removing the rest of page builder form the main page
 
-$(".teas-1 img").appendTo(".teas-1 div.image");
-$(".coffee-2 img").appendTo(".coffee-2 div.image");
-$(".indulgence-3 img").appendTo(".indulgence-3 div.image");
+$(".teas-1 img").parent().appendTo(".teas-1 div.image");
+$(".coffee-2 img").parent().appendTo(".coffee-2 div.image");
+$(".indulgence-3 img").parent().appendTo(".indulgence-3 div.image");
 
 
 $("#pl-2").appendTo(".slider");

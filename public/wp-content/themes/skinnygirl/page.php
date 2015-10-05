@@ -18,11 +18,8 @@
 
 
 		if(!mobile) {
-			if($(window).height() < 900) {
-				$('#s0').css('height', '');
-				$('#s0').css('margin-bottom', '0');
-				$('.section').css('height', 'auto');
-			} else if(blog_height < 300) {
+
+			if(blog_height < 300) {
 				res = footer_height;
 				$('body .global-wrapper #s0').css('margin-bottom', '-' + parseInt(res) + 'px');
 				$('body .global-wrapper #s0.section').css('min-height', '100% !important');
@@ -59,5 +56,13 @@
 	});
 	
 </script>
+<!--Share This-->
+<span class='st_facebook_large' displayText='Facebook'></span>
+<span class='st_fblike_large' displayText='Facebook Like'></span>
+<span class='st_twitter_large' displayText='Tweet'></span>
+<span class='st_pinterest_large' displayText='Pinterest'></span>
+<span class='st_email_large' displayText='Email'></span>
+<span class="orientation-flag"></span>
+<!--End Share This-->
 <div class="cl"></div>
 <?php get_footer(); ?>

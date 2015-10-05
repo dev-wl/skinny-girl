@@ -56,12 +56,21 @@ body.fixed-menu #head-wrapper {
                     <div class="product">
                     	<?php if (has_post_thumbnail()): ?>
                     		<?php $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
-							<img src='<?php echo $url; ?>' />
+							<a href="<?php the_permalink(); ?>">
+                            <img src='<?php echo $url; ?>' /></a>
 						<?php endif; ?>
 						<div class="prod-description">
 	                    	<h4><?php the_title(); ?></h4>
 	                        <div class='shortened'><p><?php the_excerpt(); ?></p></div>
 	                        <h5><a href="<?php the_permalink(); ?>">View product</a></h5>
+                            <!--Share This-->
+<span class='st_facebook_large' displayText='Facebook'></span>
+<span class='st_fblike_large' displayText='Facebook Like'></span>
+<span class='st_twitter_large' displayText='Tweet'></span>
+<span class='st_pinterest_large' displayText='Pinterest'></span>
+<span class='st_email_large' displayText='Email'></span>
+<span class="orientation-flag"></span>
+<!--End Share This-->
                         </div>
 					</div>
 
@@ -98,6 +107,14 @@ body.fixed-menu #head-wrapper {
 	                    	<h4><?php the_title(); ?></h4>
 	                        <div class='shortened'><p><?php the_excerpt(); ?></p></div>
 	                        <h5><a href="<?php the_permalink(); ?>">View product</a></h5>
+                            <!--Share This-->
+<span class='st_facebook_large' displayText='Facebook'></span>
+<span class='st_fblike_large' displayText='Facebook Like'></span>
+<span class='st_twitter_large' displayText='Tweet'></span>
+<span class='st_pinterest_large' displayText='Pinterest'></span>
+<span class='st_email_large' displayText='Email'></span>
+<span class="orientation-flag"></span>
+<!--End Share This-->
                         </div>
 					</div>
 
@@ -134,6 +151,14 @@ body.fixed-menu #head-wrapper {
 	                    	<h4><?php the_title(); ?></h4>
 	                        <div class='shortened'><p><?php the_excerpt(); ?></p></div>
 	                        <h5><a href="<?php the_permalink(); ?>">View product</a></h5>
+                            <!--Share This-->
+<span class='st_facebook_large' displayText='Facebook'></span>
+<span class='st_fblike_large' displayText='Facebook Like'></span>
+<span class='st_twitter_large' displayText='Tweet'></span>
+<span class='st_pinterest_large' displayText='Pinterest'></span>
+<span class='st_email_large' displayText='Email'></span>
+<span class="orientation-flag"></span>
+<!--End Share This-->
                         </div>
 					</div>
 

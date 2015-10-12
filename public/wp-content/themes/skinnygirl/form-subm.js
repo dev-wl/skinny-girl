@@ -10,6 +10,6 @@ $(document).ready(function() {
 		    	$('p.sent-ok').css({display: 'block', color:'red'});
 		    	$('p.sent-ok').text('Please fill in the required fields');
 		    }
-    	}, 1000);
+    	}, 2000);
     });
 });

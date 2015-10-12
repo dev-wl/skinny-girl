@@ -493,6 +493,16 @@ a.indulgence {
     color: red;
 }
 
+.screen-reader-response {
+	width: 72%;
+	margin: 0px auto;
+}
+
+.wpcf7-response-output {
+	width: 65%;
+	margin: 0px auto;
+}
+
 @media (max-width: 1280px) {
     #footer-wrapper img {
         /*margin-top: -221px !important;*/
@@ -510,13 +520,16 @@ a.indulgence {
     #popup_wrap {
         top: 17%;
     }
+	#cups {
+		margin-right: 3% !important;
+	}
 
     #cups a {
         margin-right: 0px;
       padding-top: 24%;
       width: 28%;
       text-align: center;
-      margin-left: -31px;
+      margin-left: -13px;
       text-decoration: none;
       color: #000;
       height: 13%;
@@ -619,16 +632,18 @@ a.indulgence {
     #searchform label {
         margin-left: 21px !important;
     }
-
+	#cups {
+		margin-right: 5% !important;
+	}
     #cups a {
      margin-right: 9px;
       padding-top: 31%;
       width: 57%;
       text-align: center;
-      margin-left: -42px;
+      margin-left: -38px;
       text-decoration: none;
       color: #000;
-      height: 12%;
+      height: 7%;
       font-family: "Archer A", "Archer B", serif;
     }
 
@@ -637,7 +652,7 @@ a.indulgence {
     }
 
     #cups a p {
-        font-size: 13px;
+        font-size: 11px;
         font-family: "Archer A", "Archer B", serif;
     }
 
@@ -654,7 +669,9 @@ a.indulgence {
     .share {
         max-width: 252px;
     }
-
+	#head {
+	height: 84% !important;
+}
     #preload_wrap img {
     margin: 0px auto;
     width: 20%;
@@ -669,6 +686,7 @@ a.indulgence {
     #preload_wrap {
       margin: 37% auto 0px;
     }
+
 }
 
 .dropdown {
@@ -923,6 +941,10 @@ a.page-numbers:hover, span.page-numbers.current {
     color: #cdcdcd;
     font-size: 21pt;
     margin: 0;
+}
+
+#blog .main-heading {
+	width: 65%;
 }
 
 #blog .main-heading h1 {
@@ -1463,7 +1485,7 @@ p.info {
     width: 46%;
     /*margin-left: 16px;*/
     margin-right: 3%;
-    height: 500px;
+    height: 545px;
     margin-bottom: 10px;
     float: left;
 }

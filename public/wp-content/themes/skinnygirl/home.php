@@ -6,6 +6,16 @@
 body.fixed-menu #head-wrapper {
 	display: block;
 }
+
+#blog {
+	display: block !important;
+}
+
+.blogpost {
+	float: left;
+}
+
+
 </style>
 
 <script>
@@ -31,7 +41,7 @@ body.fixed-menu #head-wrapper {
 
 <div id="blog">
 
-<?php query_posts($query_string . '&cat=-9, -10, -11, -12, -13' ); ?>
+<?php query_posts($query_string . '&cat=-9, -10, -11, -12, -13, -17' ); ?>
 
 
 <?php if (have_posts()): while (have_posts()): the_post(); ?>
@@ -64,6 +74,8 @@ body.fixed-menu #head-wrapper {
 
 </div>
 
+</div>
+
 <script>
 	$(window).on('load', function() {
 
@@ -79,7 +91,7 @@ body.fixed-menu #head-wrapper {
 				$('body .global-wrapper #s0.section').css('height', '100% !important');
 			} else if(blog_height <= 324) {
 				res = blog_height / 1.7;
-				$('body .global-wrapper #s0').css('margin-bottom', '-' + parseInt(res) + 'px');
+				$('body .global-wrapper #s0').css('margin-bottom', '-' + parseInt(res) - (-50) + 'px');
 				$('body .global-wrapper #s0.section').css('min-height', '100% !important');
 				$('body .global-wrapper #s0.section').css('height', '100% !important');
 			} else {

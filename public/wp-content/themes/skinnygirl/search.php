@@ -41,6 +41,8 @@ body.fixed-menu #head-wrapper {
 
 </div>
 
+</div>
+
 <script>
 	$(window).on('load', function() {
 

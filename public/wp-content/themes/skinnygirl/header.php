@@ -221,6 +221,8 @@
 			$('div#menu div.items a[href="/newsletter"]').addClass('active');
 		else if(url == '/contact-us/')
 			$('div#menu div.items a[href="/contact-us"]').addClass('active');
+		else if(url == '/all-teas/' || url == '/all-coffees/' || url == '/all-indulgence/')
+			$('div#menu div.items a[href="/products"]').addClass('active');
 		else if(url == '/retailer/')
 			$('div#menu div.items a[href="#"]').addClass('active');
 		else if(document.referrer.indexOf('/blog') > -1 || document.referrer.indexOf('/tag/') > -1)

@@ -43,7 +43,7 @@
 
 					// $('#s4').height($('#footer-wrapper #footer #info').height() + 180);
 					if($(window).width() > 646)
-						$('#footer-wrapper').height($('#footer-wrapper #footer #info').height() + 123);
+						$('#footer-wrapper').height($('#footer-wrapper #footer #info').height() + 106);
 				}
 
 

@@ -2,9 +2,21 @@
 
 <?php while (have_posts()): the_post();?>
 	<div id="blog">
-		<div class="content"><?php the_content();?> </div>
+		<div class="content"><?php the_content();?>  <div class="share_social">
+	<!--Share This-->
+	<span class='st_facebook_large' displayText='Facebook'></span>
+	<span class='st_fblike_large' displayText='Facebook Like'></span>
+	<span class='st_twitter_large' displayText='Tweet'></span>
+	<span class='st_pinterest_large' displayText='Pinterest'></span>
+	<span class='st_email_large' displayText='Email'></span>
+	<span class="orientation-flag"></span>
+	<!--End Share This-->
+</div></div>
+
+	
 	</div>
 <?php endwhile; ?>
+
 </div>
 
 <script>
@@ -18,13 +30,12 @@
 
 
 		if(!mobile) {
-
 			if(blog_height < 300) {
 				res = footer_height;
-				$('body .global-wrapper #s0').css('margin-bottom', '-' + parseInt(res) + 'px');
+				$('body .global-wrapper #s0').css('margin-bottom', '-' + 63 + 'px');
 				$('body .global-wrapper #s0.section').css('min-height', '100% !important');
 				$('body .global-wrapper #s0.section').css('height', '100% !important');
-			}else if(blog_height <= 324) {
+			} else if(blog_height <= 324) {
 				res = blog_height / 1.7;
 				$('body .global-wrapper #s0').css('margin-bottom', '-' + parseInt(res) + 'px');
 				$('body .global-wrapper #s0.section').css('min-height', '100% !important');
@@ -35,9 +46,16 @@
 				// $('body .global-wrapper #s0').css('margin-bottom', '-' + parseInt(res) + (-100) + 'px');
 			}
 		} else {
-			if(blog_height < 100) {
+			if($(window).height() == 1024 && $(window).width() == 768) {
 				res = footer_height;
-				$('body .global-wrapper #s0').css('margin-bottom', '-' + parseInt(res) + 'px');
+				// $('body .global-wrapper #s0').css('margin-bottom', '-' + parseInt(res) - (-100) + 'px');
+				// $('body .global-wrapper #s0.section').css('min-height', '100% !important');
+				// $('body .global-wrapper #s0.section').css('height', '100% !important');
+				if(blog_height < 360)
+					$('#s4').css({position:'absolute', bottom: '0px'});
+			} else if(blog_height < 400) {
+				res = footer_height;
+				$('body .global-wrapper #s0').css('margin-bottom', '-' + parseInt(res)-29 + 'px');
 				$('body .global-wrapper #s0.section').css('min-height', '100% !important');
 				$('body .global-wrapper #s0.section').css('height', '100% !important');
 			} else {
@@ -56,13 +74,6 @@
 	});
 	
 </script>
-<!--Share This-->
-<span class='st_facebook_large' displayText='Facebook'></span>
-<span class='st_fblike_large' displayText='Facebook Like'></span>
-<span class='st_twitter_large' displayText='Tweet'></span>
-<span class='st_pinterest_large' displayText='Pinterest'></span>
-<span class='st_email_large' displayText='Email'></span>
-<span class="orientation-flag"></span>
-<!--End Share This-->
+
 <div class="cl"></div>
 <?php get_footer(); ?>

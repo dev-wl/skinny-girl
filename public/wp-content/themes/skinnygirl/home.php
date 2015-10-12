@@ -1,5 +1,7 @@
 <?php get_header(); ?>
 
+<link rel="stylesheet" type="text/css" href="/wp-content/themes/skinnygirl/cool-tag-cloud.css">
+
 <style>
 body.fixed-menu #head-wrapper {
 	display: block;
@@ -21,8 +23,16 @@ body.fixed-menu #head-wrapper {
 });
 </script>
 
+<div class="aside">
+	<?php
+		dynamic_sidebar( 'Blog_aside' );
+	?>
+</div>
+
 <div id="blog">
-<?php query_posts($query_string . '&cat=-9, -10, -11, -12' ); ?>
+
+<?php query_posts($query_string . '&cat=-9, -10, -11, -12, -13' ); ?>
+
 
 <?php if (have_posts()): while (have_posts()): the_post(); ?>
 	<div class="blogpost">
@@ -51,6 +61,47 @@ body.fixed-menu #head-wrapper {
 		<?php echo paginate_links();?>
 	</div>
 </div>
+
+</div>
+
+<script>
+	$(window).on('load', function() {
+
+		footer_height = $('#s4').height();
+		blog_height = $('#blog').height();
+
+
+		if(!mobile) {
+			if(blog_height < 300) {
+				res = footer_height;
+				$('body .global-wrapper #s0').css('margin-bottom', '-' + parseInt(res) - (-15) + 'px');
+				$('body .global-wrapper #s0.section').css('min-height', '100% !important');
+				$('body .global-wrapper #s0.section').css('height', '100% !important');
+			} else if(blog_height <= 324) {
+				res = blog_height / 1.7;
+				$('body .global-wrapper #s0').css('margin-bottom', '-' + parseInt(res) + 'px');
+				$('body .global-wrapper #s0.section').css('min-height', '100% !important');
+				$('body .global-wrapper #s0.section').css('height', '100% !important');
+			} else {
+				if($(window).height() > 900 && blog_height < 600)
+					$('body .global-wrapper #s0.section').css('height', '90%');
+				else
+					$('body .global-wrapper #s0.section').css('height', 'auto');
+				// res = footer_height / 2;
+				// $('body .global-wrapper #s0').css('margin-bottom', '-' + parseInt(res) + (-100) + 'px');
+			}
+		} else {
+			if(blog_height < 400) {
+				res = footer_height;
+				$('body .global-wrapper #s0').css('margin-bottom', '-' + parseInt(res)-29 + 'px');
+				$('body .global-wrapper #s0.section').css('min-height', '100% !important');
+				$('body .global-wrapper #s0.section').css('height', '100% !important');
+			} else {
+				$('body .global-wrapper #s0.section').css('height', 'auto');
+			}
+		}
+	});
+</script>
 
  <?php wp_footer(); ?>
  <?php get_footer(); ?>

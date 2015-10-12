@@ -1,5 +1,13 @@
 <?php get_header();?>
 
+<style type="text/css">
+	@media and (min-width: 1280px) {
+		div#blog {
+			display: block !important;
+		}
+	}
+</style>
+
 <?php
 	$link = $_GET['link'];
 ?>
@@ -13,6 +21,8 @@
 </div>
 
 <script>
+
+	$('div#blog').css('display', 'block');
 
 	$('.global-wrapper').css('position', 'static');
 	

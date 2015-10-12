@@ -6,6 +6,7 @@
 		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/Archer A.css">
 		<link rel="shortcut icon" href="../../../../favicon.ico" />
 		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+		<script src="/wp-content/themes/skinnygirl/jquery.cookie.js"></script>
 
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
 	
@@ -14,9 +15,45 @@
 <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
 <script type="text/javascript">stLight.options({publisher: "5eb19ab6-d271-4b96-a7cc-6da9b827c1d2", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
     <!--End Share This-->
-    </head> 
+    </head>
 <body>
 <script>
+	function setCookie(name, value, options) {
+	  options = options || {};
+
+	  var expires = options.expires;
+
+	  if (typeof expires == "number" && expires) {
+	    var d = new Date();
+	    d.setTime(d.getTime() + expires * 1000);
+	    expires = options.expires = d;
+	  }
+	  if (expires && expires.toUTCString) {
+	    options.expires = expires.toUTCString();
+	  }
+
+	  value = encodeURIComponent(value);
+
+	  var updatedCookie = name + "=" + value;
+
+	  for (var propName in options) {
+	    updatedCookie += "; " + propName;
+	    var propValue = options[propName];
+	    if (propValue !== true) {
+	      updatedCookie += "=" + propValue;
+	    }
+	  }
+
+	  document.cookie = updatedCookie;
+	}
+
+	function getCookie(name) {
+	  var matches = document.cookie.match(new RegExp(
+	    "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+	  ));
+	  return matches ? decodeURIComponent(matches[1]) : undefined;
+	}
+
 	var recalcMenuHeight = function() {
 		$('#menu-wrapper .sliding-menu').height($(window).height());
 	}
@@ -92,8 +129,8 @@
 		
 		div = $('<div class="items dropdown products"></div>');
 		$(div).appendTo('div#menu');
-		if($(window).width() < 1000)
-			$(div).append('<a href="/products">Products</a>');
+		// if($(window).width() < 1000)
+		// 	$(div).append('<a href="/products">Products</a>');
 		// $(div).append('<a href="/#teas">Teas</a>');
 		// $(div).append('<a href="/#coffee">Coffee</a>');
 		// $(div).append('<a href="/#indulgence">Indulgent</a>');
@@ -136,7 +173,7 @@
 				$(this).data('clicked', true);
 				e.preventDefault();
 			}
-			$('div.dropdown').css('display', 'none');
+			// $('div.dropdown').css('display', 'none');
 			// e.stopImmediatePropagation();
 			// e.preventDefault();
 
@@ -156,7 +193,13 @@
 		});
 
 		$('a[href="#"], a[href="/products"], a[href="/"], .dropdown').on('mouseout mouseleave blur', function() {
-			$('div.dropdown').css('display', 'none');
+			if(url.indexOf('/newsletter/') > -1 ) {
+				 setTimeout(function() {
+					$('div.dropdown').css('display', 'none');
+				}, 1500);
+			}
+			else
+				$('div.dropdown').css('display', 'none');
 		});
 
 		$('.dropdown a').on('touchstart', function(e) {
@@ -180,14 +223,17 @@
 			$('div#menu div.items a[href="/contact-us"]').addClass('active');
 		else if(url == '/retailer/')
 			$('div#menu div.items a[href="#"]').addClass('active');
-			else if(document.referrer == 'http://skinnygirlcoffeeandteas.com/blog/')
-   $('div#menu div.items a[href="/blog"]').addClass('active');
-  else if(document.referrer == 'http://skinnygirlcoffeeandteas.com/products/')
-   $('div#menu div.items a[href="/products"]').addClass('active');
+		else if(document.referrer.indexOf('/blog') > -1 || document.referrer.indexOf('/tag/') > -1)
+		   $('div#menu div.items a[href="/blog"]').addClass('active');
+	  	else if(url == '/all-teas/' || url == '/all-coffees/' || 
+	  		url == '/all-indulgence/')
+		   $('div#menu div.items a[href="/products"]').addClass('active');
 		else
 			$('div#menu div.items:not(.dropdown) a:first-child').addClass('active');
 
-
+		$('a[href="/products"]').click(function(e){
+			e.preventDefault();
+		})
 
 		$('.sliding-menu .close').on('click', function() {
 			if($("#menu-wrapper .sliding-menu").hasClass('visible')) {
@@ -213,7 +259,7 @@
 			$("#menu-wrapper .sliding-menu").toggleClass('visible');
 		});
 
-		if($(window).width() <= 667)
+		if($(window).width() <= 667 || $(window).width() == 768)
 		{
 			$('#menu-wrapper .items a').on('click', function() {
 				$('#menu-wrapper .items a').removeClass('active');
@@ -244,15 +290,127 @@
 			$('.items.dropdown.products').css('left', $('#menu .items:not(.dropdown) a:eq(1)').offset().left);
 		}, 300);
 	});
-</script>
+
+	$(document).ready(function() {
+		$('.items.dropdown').css('display', 'none');
+
+		// setTimeout(function() {
+		// 	if( $.cookie("popup") != null)
+		// 		return;
+		// 	setTimeout(function() {
+		// 		$('#darkener, #popup_wrap').css('display', 'block');
+
+		// 		var date = new Date();
+		// 		var minutes = 120;
+		// 		date.setTime(date.getTime() + (minutes * 60 * 1000));
+					
+		// 		$.cookie("popup", "skinnygirls", {
+		// 	      expires: date
+		// 	    });
+
+		// 	}, 1000);
+		// }, 2500);
+		
+
+		// $('.popup-close').click(function() {
+		// 	$('#darkener').css('display', 'none');
+		// 	$('#popup').css('display', 'none');
+		// });
+	});
 
 	
+	$(function() {
+		if(getCookie("preloader") == null)
+			$('#preloader').css('display', 'block');
+		else
+			$('#preloader').css('display', 'none');
+
+		var splashDelay = 0,
+			splashStep = 300,
+			splashTotal = $('.letters-wrapper span').length * splashStep;
+
+		$('#preloader #preload_wrap .letters-wrapper span').each(function(index, elem) {
+			setTimeout(function() {
+				$(elem).animate({
+					opacity: 1,
+				}, splashStep);
+			}, splashDelay);
+
+			splashDelay += splashStep;
+		});
+
+		setTimeout(function() {
+			$('#preloader').css('display', 'none');
+			setCookie("preloader", "skinnygirls", {
+	     	 path: '/',
+	    	});
+		}, splashTotal);
+	});
+</script>
+	
+	<div id="darkener"></div>
+
+		<div id="popup_wrap">
+
+		<div id="popup">
+				<div class="popup-close"></div>
+			<div style="display: none;"><script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+<script src="https://www.dm-mailinglist.com/subscribe_forms/localized.js" charset="UTF-8"></script>
+<script src="https://www.dm-mailinglist.com/subscribe_forms/subscribe_embed.js" charset="UTF-8"></script>
+<script src="/wp-content/themes/skinnygirl/form-subm.js" charset="UTF-8"></script>
+			</div>
+
+			<div>
+				<form class="directmail-subscribe-form contact-form" accept-charset="UTF-8" action="https://www.dm-mailinglist.com/subscribe" method="post" data-directmail-use-ajax="1" data-form-id="80d85489">
+					<input name="email" type="hidden" /><input name="form_id" type="hidden" value="80d85489" />
+					<div>
+						<p class="info"><span style="color:#000 !important;">Skinny</span><span style="color:red;">girl &trade;</span></p>
+						<p class="info">Sign up for news and promotions on your new favorite coffee and teas.</p>
+						<p class="info">You may unsubscribe at anytime.</p>
+						<p class="sent-ok">Your message has been sent successfully!</p>
+						<label for="directmail-80d85489-first_name">First Name:</label>
+						<input id="directmail-80d85489-first_name" name="first_name" type="text" value="" placeholder="First Name" />
+
+						<label for="directmail-80d85489-last_name">Last Name:</label>
+						<input id="directmail-80d85489-last_name" name="last_name" type="text" value="" placeholder="Last Name" />
+
+						<label for="directmail-80d85489-custom_1">Country:</label>
+						<input id="directmail-80d85489-custom_1" name="custom_1" type="text" value="" placeholder="Country" />
+						<br />
+						<label for="directmail-80d85489-subscriber_email">Email*:</label>
+						<input id="directmail-80d85489-subscriber_email" class="directmail-required-field" name="subscriber_email" required="required" type="email" value="" placeholder="Email*" />
+
+						<input type="submit" value="Subscribe" />
+
+					</div>
+				</form>
+			</div>
+		</div>
+		</div>
+	
+
+	<div id="preloader">
+		<div id="preload_wrap">
+			<img src = "/wp-content/themes/skinnygirl/logo.png" />
+
+			<div class="letters-wrapper">
+				<span class="l1">S</span><span class="l2">k</span><span class="l3">i</span><span class="l4">n</span><span class="l5">n</span><span class="l6">y</span><span class="l7">g</span><span class="l8">i</span><span class="l9">r</span><span class="l10">l</span>
+			</div>
+		</div>
+	</div>
 
 	<div class="global-wrapper">
 			<div id="h0"></div>
 			<div id="s0" class="section">
 				<div id="head-wrapper">
-					<a id="head" href="/"></a>
+					<div id="head-container">
+						<a id="head" href="/"></a>
+						<div id="cups">
+							<a href="/#teas"><p>Teas</p></a>
+							<a class="coffee" href="/#coffee"><p>Coffee</p></a>
+							<a class="indulgence" href="/#indulgence"><p>Indulgence</p></a>
+						</div>
+					</div>
 				</div>
 
 
@@ -281,3 +439,6 @@
 			
 			</div>
 		</div>
+
+	
+		

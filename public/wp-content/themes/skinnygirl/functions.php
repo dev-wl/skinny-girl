@@ -23,6 +23,11 @@ function arphabet_widgets_init() {
     'after_widget'  => '</div>',
   ) );
 
+  register_sidebar( array(
+    'name'          => 'Blog_aside',
+    'id'            => 'blog_1'
+  ) );
+
 }
 add_action( 'widgets_init', 'arphabet_widgets_init' );
 

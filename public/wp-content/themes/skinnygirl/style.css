@@ -8,6 +8,18 @@
         url('dancing_script-webfont.svg#dancing_scriptregular') format('svg');
     font-weight: normal;
     font-style: normal;
+}
+
+@font-face {
+    font-family: 'Futura Book';
+    src: url('futura-book.eot');
+    src: url('futura-book.eot?#iefix') format('embedded-opentype'),
+         url('futura-book.woff2') format('woff2'),
+         url('futura-book.woff') format('woff'),
+         url('futura-book.ttf') format('truetype'),
+         url('futura-book.svg#futura_bkbook') format('svg');
+    font-weight: normal;
+    font-style: normal;
 
 }
 
@@ -557,7 +569,11 @@ a.indulgence {
     }
 
     #preload_wrap {
-      margin: 19% auto 0px;
+      margin: 27% auto !important;
+    }
+
+    .letters-wrapper {
+        width: 20% !important;
     }
 }
 
@@ -646,9 +662,14 @@ a.indulgence {
       height: 7%;
       font-family: "Archer A", "Archer B", serif;
     }
+    
+    #cups a.teas {
+        margin-right: 2px;
+    }
 
     #cups a.coffee {
         margin-top: 42px;
+        margin-right: 2px;
     }
 
     #cups a p {
@@ -687,6 +708,17 @@ a.indulgence {
       margin: 37% auto 0px;
     }
 
+}
+
+@media screen and (device-aspect-ratio: 40/71) { /*5iph*/
+    #cups a.teas {
+        margin-right: 6px;
+    }
+
+    #cups a.coffee {
+        margin-top: 42px;
+        margin-right: 9px;
+    }
 }
 
 .dropdown {
@@ -1192,7 +1224,16 @@ img.wp-post-image {
         margin-left: 1% !important;
         height: 38% !important;
     }
+}
 
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) { 
+    .content {
+        width:90%;
+        margin: 0px auto;
+    }
+    #bottom-footer p {
+      margin-top: 10px;
+    }
 }
 
 @media (device-width: 357px) {

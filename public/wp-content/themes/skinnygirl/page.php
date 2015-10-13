@@ -1,5 +1,14 @@
 <?php get_header();?>
 
+<style>
+	#head-wrapper {
+		display: block;
+	}
+	body.fixed-menu #head-wrapper {
+		display: block !important;
+	}
+</style>
+
 <?php while (have_posts()): the_post();?>
 	<div id="blog">
 		<div class="content"><?php the_content();?>  <div class="share_social">
@@ -18,6 +27,23 @@
 <?php endwhile; ?>
 
 </div>
+</div>
+
+
+<script>
+	$(window).on('scroll', function(e) {
+	var st = $(window).scrollTop();
+
+	var hwHeight = $('#head-wrapper').height();
+
+	if (st > hwHeight) {
+		$('body').addClass('fixed-menu');
+		
+	} else {
+		$('body').removeClass('fixed-menu');
+	}
+});
+</script>
 
 <script>
 
@@ -35,6 +61,7 @@
 				$('body .global-wrapper #s0').css('margin-bottom', '-' + 63 + 'px');
 				$('body .global-wrapper #s0.section').css('min-height', '100% !important');
 				$('body .global-wrapper #s0.section').css('height', '100% !important');
+				$('body .global-wrapper').css('height', '90%');
 			} else if(blog_height <= 324) {
 				res = blog_height / 1.7;
 				$('body .global-wrapper #s0').css('margin-bottom', '-' + parseInt(res) + 'px');
@@ -42,24 +69,31 @@
 				$('body .global-wrapper #s0.section').css('height', '100% !important');
 			} else {
 				$('body .global-wrapper #s0.section').css('height', 'auto');
+				$('body .global-wrapper').css('height', 'auto');
 				// res = footer_height / 2;
 				// $('body .global-wrapper #s0').css('margin-bottom', '-' + parseInt(res) + (-100) + 'px');
 			}
 		} else {
-			if($(window).height() == 1024 && $(window).width() == 768) {
-				res = footer_height;
-				// $('body .global-wrapper #s0').css('margin-bottom', '-' + parseInt(res) - (-100) + 'px');
-				// $('body .global-wrapper #s0.section').css('min-height', '100% !important');
-				// $('body .global-wrapper #s0.section').css('height', '100% !important');
-				if(blog_height < 360)
-					$('#s4').css({position:'absolute', bottom: '0px'});
+			if($(window).height() > $(window).width()) { //portrait
+				if(blog_height < 520) {
+					$('body .global-wrapper #s0.section').css('min-height', '100%');
+					$('body .global-wrapper #s0.section').css('height', '100%');
+					$('body .global-wrapper').css('height', '92%');
+					$('body, html').css('height', '98%');
+				} else {
+					$('body .global-wrapper #s0.section').css('height', 'auto');
+					$('body .global-wrapper').css('height', 'auto');
+					$('body .global-wrapper').css('min-height', '99%');
+				}
 			} else if(blog_height < 400) {
 				res = footer_height;
 				$('body .global-wrapper #s0').css('margin-bottom', '-' + parseInt(res)-29 + 'px');
 				$('body .global-wrapper #s0.section').css('min-height', '100% !important');
 				$('body .global-wrapper #s0.section').css('height', '100% !important');
+				$('body .global-wrapper').css('height', '87%');
 			} else {
 				$('body .global-wrapper #s0.section').css('height', 'auto');
+				$('body .global-wrapper').css('height', 'auto');
 			}
 		}
 		
@@ -76,4 +110,5 @@
 </script>
 
 <div class="cl"></div>
+
 <?php get_footer(); ?>

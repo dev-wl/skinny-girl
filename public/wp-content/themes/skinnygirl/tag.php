@@ -6,6 +6,10 @@
 body.fixed-menu #head-wrapper {
 	display: block;
 }
+
+#blog {
+	display: block !important;
+}
 </style>
 
 <script>
@@ -23,6 +27,12 @@ body.fixed-menu #head-wrapper {
 });
 
 </script>
+
+<div class="aside">
+	<?php
+		dynamic_sidebar( 'Blog_aside' );
+	?>
+</div>
 
 <div id="blog">
 
@@ -57,6 +67,7 @@ body.fixed-menu #head-wrapper {
 	</div>
 </div>
 
+</div>
 </div>
 
 <script type="text/javascript">

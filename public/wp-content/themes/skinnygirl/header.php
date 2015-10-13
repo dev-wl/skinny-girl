@@ -209,12 +209,16 @@
 			$(this).siblings().removeClass('active').end().addClass('active');
 		});
 		url = "<?php echo $_SERVER['REQUEST_URI']; ?>";
-		if(url == '/contact-us/')
+		if(url == '/')
+			$('div#menu div.items a[href="/"]').addClass('active');
+		else if(url == '/contact-us/')
 			$('div#menu div.items a[href="/contact-us"]').addClass('active');
 		else if(url == '/about-us-page/')
 			$('div#menu div.items a[href="/about-us-page"]').addClass('active');
 		else if(url.indexOf('blog') != -1)
 			$('div#menu div.items a[href="/blog"]').addClass('active');
+		else if(url.indexOf('/?f=') != -1)
+			$('div#menu div.items a[href="/"]').addClass('active');
 		else if(url == '/products/')
 			$('div#menu div.items a[href="/products"]').addClass('active');
 		else if(url == '/newsletter/')
@@ -359,7 +363,7 @@
 			<div style="display: none;"><script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
 <script src="https://www.dm-mailinglist.com/subscribe_forms/localized.js" charset="UTF-8"></script>
 <script src="https://www.dm-mailinglist.com/subscribe_forms/subscribe_embed.js" charset="UTF-8"></script>
-<script src="/wp-content/themes/skinnygirl/form-subm.js" charset="UTF-8"></script>
+<script src="/wp-content/themes/skinnygirl/form-popup.js" charset="UTF-8"></script>
 			</div>
 
 			<div>
@@ -408,7 +412,7 @@
 					<div id="head-container">
 						<a id="head" href="/"></a>
 						<div id="cups">
-							<a href="/#teas"><p>Teas</p></a>
+							<a href="/#teas" class="teas"><p>Teas</p></a>
 							<a class="coffee" href="/#coffee"><p>Coffee</p></a>
 							<a class="indulgence" href="/#indulgence"><p>Indulgence</p></a>
 						</div>

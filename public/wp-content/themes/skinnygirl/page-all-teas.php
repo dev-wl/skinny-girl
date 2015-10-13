@@ -29,7 +29,6 @@ body.fixed-menu #head-wrapper {
 			e.preventDefault();
 			e.stopPropagation();
 		});
-
 	});
 </script>
 

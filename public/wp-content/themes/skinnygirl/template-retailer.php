@@ -5,6 +5,31 @@
 get_header();
 ?>
 
+<style>
+    #head-wrapper {
+        display: block;
+    }
+    body.fixed-menu #head-wrapper {
+        display: block !important;
+    }
+</style>
+
+
+<script>
+    $(window).on('scroll', function(e) {
+    var st = $(window).scrollTop();
+
+    var hwHeight = $('#head-wrapper').height();
+
+    if (st > hwHeight) {
+        $('body').addClass('fixed-menu');
+        
+    } else {
+        $('body').removeClass('fixed-menu');
+    }
+});
+</script>
+
     <div id="blog">
         <div class="content">
             
@@ -29,7 +54,7 @@ get_header();
                         </div>
                     <?php } if($i == 3 || end($myposts) == $post): {
                             $i = 0; ?>
-                        </div>
+                        </div><div class="clearfix"></div>
                         <?php } endif; ?>
                 <?php endforeach;
                 wp_reset_postdata(); ?>

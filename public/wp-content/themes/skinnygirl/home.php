@@ -89,16 +89,19 @@ body.fixed-menu #head-wrapper {
 				$('body .global-wrapper #s0').css('margin-bottom', '-' + parseInt(res) - (-15) + 'px');
 				$('body .global-wrapper #s0.section').css('min-height', '100% !important');
 				$('body .global-wrapper #s0.section').css('height', '100% !important');
-			} else if(blog_height <= 324) {
-				res = blog_height / 1.7;
-				$('body .global-wrapper #s0').css('margin-bottom', '-' + parseInt(res) - (-50) + 'px');
-				$('body .global-wrapper #s0.section').css('min-height', '100% !important');
-				$('body .global-wrapper #s0.section').css('height', '100% !important');
+			// } else if(blog_height <= 324) {
+			// 	res = blog_height / 1.7;
+			// 	$('body .global-wrapper #s0').css('margin-bottom', '-' + parseInt(res) - (-50) + 'px');
+			// 	$('body .global-wrapper #s0.section').css('min-height', '100% !important');
+			// 	$('body .global-wrapper #s0.section').css('height', '100% !important');
 			} else {
 				if($(window).height() > 900 && blog_height < 600)
 					$('body .global-wrapper #s0.section').css('height', '90%');
-				else
+				else {
 					$('body .global-wrapper #s0.section').css('height', 'auto');
+					$('body, html').css('min-height', '100%');
+					$('body').css('height', 'auto');
+				}
 				// res = footer_height / 2;
 				// $('body .global-wrapper #s0').css('margin-bottom', '-' + parseInt(res) + (-100) + 'px');
 			}

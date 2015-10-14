@@ -49,6 +49,12 @@
 
 	$('.global-wrapper').css('position', 'static');
 	
+	if($(window).height() < 700) {
+		$('body .global-wrapper #s0').css('margin-bottom', '0px');
+		$('body, html').css('min-height', '100%');
+		$('body').css('height', 'auto');
+	}
+
 	$(window).on('load', function() {
 
 		footer_height = $('#s4').height();
@@ -62,6 +68,11 @@
 				$('body .global-wrapper #s0.section').css('min-height', '100% !important');
 				$('body .global-wrapper #s0.section').css('height', '100% !important');
 				$('body .global-wrapper').css('height', '90%');
+				if($(window).height() < 700) {
+					$('body .global-wrapper #s0').css('margin-bottom', '0px');
+					$('body, html').css('min-height', '100%');
+					$('body').css('height', 'auto');
+				}
 			} else if(blog_height <= 324) {
 				res = blog_height / 1.7;
 				$('body .global-wrapper #s0').css('margin-bottom', '-' + parseInt(res) + 'px');

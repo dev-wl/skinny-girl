@@ -107,7 +107,7 @@ body.fixed-menu #head-wrapper {
 				if(blog_height < 520) {
 					$('body .global-wrapper #s0.section').css('min-height', '100%');
 					$('body .global-wrapper #s0.section').css('height', '100%');
-					$('body .global-wrapper').css('height', '92%');
+					$('body .global-wrapper').css('height', '93%');
 					$('body, html').css('height', '98%');
 				} else {
 					$('body .global-wrapper #s0.section').css('height', 'auto');

@@ -27,6 +27,14 @@
 			$(window).on('load', function() {
 				h = $('#footer-wrapper #footer #info').height();
 				$('#s4').height(63);
+
+
+				if(mobile && window.mainPage != null) {
+					if($(window).height() > $(window).width() && $(window).height() > 500) { //portrait
+						$('#footer-wrapper').height(103);
+					}
+				}
+
 				footer_h = $('#footer-wrapper').height();
 				if(navigator.userAgent.toLowerCase().indexOf('chrome') > -1) {
 					// margin = $('#footer-wrapper img').css('marginTop');

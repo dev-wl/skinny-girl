@@ -78,19 +78,19 @@
 				if(blog_height < 520) {
 					$('body .global-wrapper #s0.section').css('min-height', '100%');
 					$('body .global-wrapper #s0.section').css('height', '100%');
-					$('body .global-wrapper').css('height', '92%');
+					$('body .global-wrapper').css('height', '93%');
 					$('body, html').css('height', '98%');
 				} else {
 					$('body .global-wrapper #s0.section').css('height', 'auto');
 					$('body .global-wrapper').css('height', 'auto');
-					$('body .global-wrapper').css('min-height', '99%');
+					$('body .global-wrapper').css('min-height', '100%');
 				}
 			} else if(blog_height < 400) {
 				res = footer_height;
 				$('body .global-wrapper #s0').css('margin-bottom', '-' + parseInt(res)-29 + 'px');
-				$('body .global-wrapper #s0.section').css('min-height', '100% !important');
-				$('body .global-wrapper #s0.section').css('height', '100% !important');
-				$('body .global-wrapper').css('height', '87%');
+				$('body .global-wrapper #s0.section').css('min-height', '99% !important');
+				$('body .global-wrapper #s0.section').css('height', '99% !important');
+				$('body .global-wrapper').css('height', '86%');
 			} else {
 				$('body .global-wrapper #s0.section').css('height', 'auto');
 				$('body .global-wrapper').css('height', 'auto');

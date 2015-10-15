@@ -370,9 +370,8 @@
 				<form class="directmail-subscribe-form contact-form" accept-charset="UTF-8" action="https://www.dm-mailinglist.com/subscribe" method="post" data-directmail-use-ajax="1" data-form-id="80d85489">
 					<input name="email" type="hidden" /><input name="form_id" type="hidden" value="80d85489" />
 					<div>
-						<p class="info"><span style="color:#000 !important;">Skinny</span><span style="color:red;">girl &trade;</span></p>
-						<p class="info">Sign up for news and promotions on your new favorite coffee and teas.</p>
-						<p class="info">You may unsubscribe at anytime.</p>
+						<p class="info"><span style="color:#000 !important; font-size:36px;">Skinny</span><span style="color:red;font-size:36px;">girl&trade;</span></p>
+						<p class="info">Sign up for news and promotions on your new favorite coffee and teas. You may unsubscribe at anytime.</p>
 						<p class="sent-ok">Your message has been sent successfully!</p>
 						<label for="directmail-80d85489-first_name">First Name:</label>
 						<input id="directmail-80d85489-first_name" name="first_name" type="text" value="" placeholder="First Name" />

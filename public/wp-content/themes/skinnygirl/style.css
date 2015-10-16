@@ -515,6 +515,10 @@ a.indulgence {
 	margin: 0px auto;
 }
 
+#twitter-widget-0 {
+    height: 300px !important;
+}
+
 @media (max-width: 1280px) {
     #footer-wrapper img {
         /*margin-top: -221px !important;*/
@@ -1646,4 +1650,13 @@ line-height:150%;
 p.desc {
     margin-bottom: 75px;
 	font-family: "Archer A", "Archer B", serif;
+}
+
+li.widget > div {
+    font-family: Futura, "Futura Book" !important;
+}
+
+h2.widgettitle {
+    color: #000 !important;
+    font-weight: normal;
 }

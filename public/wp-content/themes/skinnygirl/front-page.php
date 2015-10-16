@@ -110,8 +110,12 @@
 
 							if ($(this).attr('id') == 's4') {
 								// $(this).height($(this).find('#footer-wrapper').height());
+								
 								$(this).height($(this).find('#footer-wrapper #footer #info').height() + 100);
 								$('#footer-wrapper').height($('#footer-wrapper #footer #info').height() + 200);
+								
+
+								
 							} else {
 								$(this).height(windowHeight);
 							}

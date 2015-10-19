@@ -801,7 +801,7 @@ div#blog {
 }
 
 .content, .shortened p {
-    text-align: justify; 
+    text-align: left; 
 }
 .cl {
     clear: both; }

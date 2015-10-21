@@ -46,11 +46,19 @@ get_header();
                 <?php $i++; ?>
                 <?php $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
                 <div class="retailer">
-                    <div class="square" style="background-image: url('<?php echo $url; ?>'); background-position: 50% 52%; background-repeat: no-repeat; background-size: 77% auto;">
+                    <a class="ret-link" href="#"><div class="square" style="background-image: url('<?php echo $url; ?>'); background-position: 50% 52%; background-repeat: no-repeat; background-size: 77% auto;">
                                 <div class="img"></div>
-                            </div>
+                            </div></a>
+
                             <h2><?php the_title(); ?></h2>
                             <p><?php the_excerpt(); ?></p>
+
+                            <script type="text/javascript">
+                                $( ".retailer" ).each(function( index ) {
+                                  link = $(this).find('a.ret').css('display', 'none').attr('href');
+                                  $(this).find('a.ret-link').attr('href', link);
+                                });
+                            </script>
                         </div>
                     <?php } if($i == 3 || end($myposts) == $post): {
                             $i = 0; ?>

@@ -93,4 +93,14 @@ function my_post_image_html( $html, $post_id, $post_image_id ) {
 	return $html;
 }
 
+function buy_now($atts) {
+  echo $link;
+  extract( shortcode_atts( array(
+      'link' => '/',
+      ), $atts ) );
+  return '<div class="buy_wrapper"><a class="buy_now" href = ' . $link . '>Buy now!</a></div>';
+}
+
+add_shortcode('buynow', 'buy_now');
+
 ?>

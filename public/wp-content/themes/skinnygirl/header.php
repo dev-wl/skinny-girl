@@ -18,7 +18,6 @@
     </head>
 <body>
 <script>
-	//
 	function setCookie(name, value, options) {
 	  options = options || {};
 

@@ -66,7 +66,6 @@ body.fixed-menu #head-wrapper {
 						<div class="prod-description">
 	                    	<h4><?php the_title(); ?></h4>
 	                        <div class='shortened'><p><?php the_excerpt(); ?></p></div>
-	                        <h5><a href="<?php the_permalink(); ?>">View product</a></h5>
                             <!--Share This-->
 <span class='st_facebook_large' displayText='Facebook'></span>
 <span class='st_fblike_large' displayText='Facebook Like'></span>

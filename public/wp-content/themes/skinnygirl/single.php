@@ -55,7 +55,6 @@ body.fixed-menu #head-wrapper {
 <?php endwhile; ?>
 
 <script>
-$(window).on('load', function() {
 
 		footer_height = $('#s4').height();
 		blog_height = $('#blog').height();
@@ -108,7 +107,13 @@ $(window).on('load', function() {
 				$('body .global-wrapper').css('height', 'auto');
 			}
 		}
-	});
+
+		if(navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
+			// if($('.content').find('h2 a')[0] == undefined) {
+				$('#blog .main-heading').css('width', '65%');
+			// }
+		}
+
 </script>
 
 <?php get_footer(); ?>

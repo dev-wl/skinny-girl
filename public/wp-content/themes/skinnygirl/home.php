@@ -77,8 +77,7 @@ body.fixed-menu #head-wrapper {
 </div>
 
 <script>
-	$(window).on('load', function() {
-
+function makeFooter() {
 		footer_height = $('#s4').height();
 		blog_height = $('#blog').height();
 
@@ -130,7 +129,10 @@ body.fixed-menu #head-wrapper {
 				$('body .global-wrapper').css('height', 'auto');
 			}
 		}
-	});
+}
+
+makeFooter();
+$(window).on('load', makeFooter());
 </script>
 
  <?php wp_footer(); ?>

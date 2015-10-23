@@ -55,7 +55,8 @@
 		$('body').css('height', 'auto');
 	}
 
-	$(window).on('load', function() {
+	if($('.content').find('.screen-reader-response').contents().get(0) != undefined)
+		$('.content').find('.screen-reader-response').contents().get(0).nodeValue = '';
 
 		footer_height = $('#s4').height();
 		blog_height = $('#blog').height();
@@ -116,8 +117,7 @@
 		// res = parseInt(margin) + (parseInt(b_height));
 		// $('body .global-wrapper #s0').css('margin-bottom', res + 'px');
 		
-	});
-	
+
 </script>
 
 <div class="cl"></div>

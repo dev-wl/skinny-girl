@@ -375,4 +375,10 @@ $(window).on('load', function() {
 
 // $(window).scrollTop(0);
 
+$(document).ready(function() {
+	if(!mobile) {
+		$(window).resize(function() { window.location = window.location; });
+	}
+});
+
 </script>

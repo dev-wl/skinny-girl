@@ -18,7 +18,6 @@
     </head>
 <body>
 <script>
-
 	function setCookie(name, value, options) {
 	  options = options || {};
 
@@ -56,7 +55,7 @@
 	}
 
 	var recalcMenuHeight = function() {
-		$('#menu-wrapper .sliding-menu').height($(window).height());
+		$('#menu-wrapper .sliding-menu').height($(window).height() + 50);
 	}
 
 	var mobile = false;
@@ -233,7 +232,8 @@
 		else if(document.referrer.indexOf('/blog') > -1 || document.referrer.indexOf('/tag/') > -1)
 		   $('div#menu div.items a[href="/blog"]').addClass('active');
 	  	else if(url == '/all-teas/' || url == '/all-coffees/' || 
-	  		url == '/all-indulgence/')
+	  		url == '/all-indulgence/' || document.referrer.indexOf('/all-teas') > -1 || document.referrer.indexOf('/all-coffees') > -1 ||
+	  		document.referrer.indexOf('/all-indulgence') > -1 )
 		   $('div#menu div.items a[href="/products"]').addClass('active');
 		else
 			$('div#menu div.items:not(.dropdown) a:first-child').addClass('active');
@@ -325,7 +325,25 @@
 		// });
 	});
 
-	
+	$(window).on('resize', function() {
+		if(($(window).width() >= 653 && $(window).width() <= 710) || ($(window).width() >= 763 && $(window).width() <= 766)) {
+			$('#menu-wrapper #menu #search-buttons').css('display', 'none');
+		}
+		else {
+			$('#menu-wrapper #menu #search-buttons').css('display', 'block');
+		}
+
+		if($(window).width() >= 654 && $(window).width() <= 947) {
+			$('#search-bar').css('display', 'none');
+		}
+		else {
+			$('#search-bar').css('display', 'block');
+		}
+
+		$('.fb-feed').width($('#wff-id').width() + 15);
+
+	});
+
 	$(function() {
 		if(getCookie("preloader") == null)
 			$('#preloader').css('display', 'block');
@@ -352,6 +370,26 @@
 	     	 path: '/',
 	    	});
 		}, splashTotal);
+
+		if(($(window).width() >= 653 && $(window).width() <= 710) || ($(window).width() >= 763 && $(window).width() <= 766)) {
+			$('#menu-wrapper #menu #search-buttons').css('display', 'none');
+		}
+		else {
+			$('#menu-wrapper #menu #search-buttons').css('display', 'block');
+		}
+
+		if($(window).width() >= 654 && $(window).width() <= 947) {
+			$('#search-bar').css('display', 'none');
+		}
+		else {
+			$('#search-bar').css('display', 'block');
+		}
+	});
+
+	$(document).ready(function() {
+		if($(window).width() >= 238 && $(window).width() < 580 && $(window).height() >= 239 && $(window).height() <= 360) {
+			$('.sliding-menu a').css({'font-size': '15px', 'line-height': '22px'});
+		} 
 	});
 </script>
 	

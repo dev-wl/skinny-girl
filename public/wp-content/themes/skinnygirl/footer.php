@@ -92,16 +92,16 @@
 
 			$('.fb-feed.bottom').css('margin-top', $('.wff-feed-wrapper').height() - 35 + 'px')
 
-			$('#twitter-widget-0').attr('name', 'twitter-widget-0');
+			// $('#twitter-widget-0').attr('name', 'twitter-widget-0');
 
-			var divNode = document.createElement("style");
-			divNode.innerHTML = ".customisable, .customisable:link, button.customisable, a:hover b, a:link, a:visited, .customisable:hover,  a:focus b, i.ic-sum.ic-mask { color: #d13139; } a:hover .ic-mask, a:focus .ic-mask {background-color: #d13139;}";
-			document.body.appendChild(divNode);
+			// var divNode = document.createElement("style");
+			// divNode.innerHTML = ".customisable, .customisable:link, button.customisable, a:hover b, a:link, a:visited, .customisable:hover,  a:focus b, i.ic-sum.ic-mask { color: #d13139; } a:hover .ic-mask, a:focus .ic-mask {background-color: #d13139;}";
+			// document.body.appendChild(divNode);
 
-			if(navigator.userAgent.toLowerCase().indexOf('chrome') > -1)
-				frames['twitter-widget-0'].contentWindow.document.body.appendChild(divNode);
-			else
-				frames['twitter-widget-0'].document.body.appendChild(divNode);
+			// if(navigator.userAgent.toLowerCase().indexOf('chrome') > -1)
+			// 	frames['twitter-widget-0'].contentWindow.document.body.appendChild(divNode);
+			// else
+				// frames['twitter-widget-0'].document.body.appendChild(divNode);
 		});
 
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

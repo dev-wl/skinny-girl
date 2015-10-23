@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function() {	
     $('#blog form.contact-form').submit(function(e) {
      	setTimeout(function() {
 	    	if($('#blog form.contact-form input[type=submit]').val() == '✔ Subscribed') {

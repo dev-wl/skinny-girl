@@ -76,7 +76,7 @@
 				}
 			} else if(blog_height <= 324) {
 				res = blog_height / 1.7;
-				$('body .global-wrapper #s0').css('margin-bottom', '-' + parseInt(res) + 'px');
+				$('body .global-wrapper #s0').css('margin-bottom', '-' + parseInt(res) + 15 + 'px');
 				$('body .global-wrapper #s0.section').css('min-height', '100% !important');
 				$('body .global-wrapper #s0.section').css('height', '100% !important');
 			} else {

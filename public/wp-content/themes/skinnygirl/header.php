@@ -389,6 +389,10 @@
 	$(document).ready(function() {
 		if($(window).width() >= 238 && $(window).width() < 580 && $(window).height() >= 239 && $(window).height() <= 360) {
 			$('.sliding-menu a').css({'font-size': '15px', 'line-height': '22px'});
+		}
+
+		if(navigator.userAgent.toLowerCase().indexOf('safari') > -1) {
+			$('#preloader div#preload_wrap').css('margin', '15% auto');
 		} 
 	});
 </script>

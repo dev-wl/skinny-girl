@@ -518,6 +518,10 @@ a.indulgence {
 	margin: 0px auto;
 }
 
+.wpcf7-response-output.wpcf7-mail-sent-ng {
+    color: #d13139;
+}
+
 #twitter-widget-0 {
     height: 300px !important;
     float: left;
@@ -1341,12 +1345,17 @@ img.wp-post-image {
 
     .product {
         width: 100% !important;
-        height: 700px !important;
+        height: 477px !important;
     }
 
     .product-row .product img {
-        margin-left: 1% !important;
+        /*margin-left: 1% !important;*/
+        margin-left: 11% !important;
         height: 38% !important;
+    }
+
+    .product-row {
+        margin-bottom: 0px !important;
     }
 }
 
@@ -1922,8 +1931,8 @@ h1.summary a {
     margin-left: 8px;
 }
 
-#wff-id > div:nth-child(2) {
-    padding-top: 50px;
+#wff-id > div:nth-child(3n) {
+    /*padding-top: 50px;*/
 }
 
 a.follow {

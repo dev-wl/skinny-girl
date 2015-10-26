@@ -88,7 +88,7 @@
 			div2 = '<div class="fb-feed bottom"><span><a href="http://fb.com/skinnygirlcoffeeandteas">Read more on facebook</a></span></div>';
 			$(div2).insertAfter('.fb-feed');
 			$('.fb-feed').width($('#wff-id').width() + 15);
-			$('.wff-fb-item:nth-child(1n)').css('padding-top', '50px');
+			$('.wff-fb-item:nth-child(3)').css('padding-top', '50px');
 
 			$('.fb-feed.bottom').css('margin-top', $('.wff-feed-wrapper').height() - 35 + 'px')
 

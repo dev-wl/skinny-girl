@@ -61,7 +61,8 @@ body.fixed-menu #head-wrapper {
                     <div class="product">
                     	<?php if (has_post_thumbnail()): ?>
                     		<?php $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
-							<img src='<?php echo $url; ?>' />
+                    		<a href="<?php the_permalink(); ?>">
+							<img src='<?php echo $url; ?>' /></a>
 						<?php endif; ?>
 						<div class="prod-description">
 	                    	<h4><?php the_title(); ?></h4>

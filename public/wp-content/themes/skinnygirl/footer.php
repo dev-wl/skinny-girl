@@ -39,6 +39,8 @@
 					if($(window).height() > $(window).width() && $(window).height() > 500) { //portrait
 						$('#footer-wrapper').height(103);
 					}
+
+					
 				}
 
 				footer_h = $('#footer-wrapper').height();
@@ -102,6 +104,12 @@
 			// 	frames['twitter-widget-0'].contentWindow.document.body.appendChild(divNode);
 			// else
 				// frames['twitter-widget-0'].document.body.appendChild(divNode);
+
+				if (navigator.userAgent.match(/iPad/i) != null && $(window).height() > $(window).width()) { //ipad portrait
+						$('#s4').height(394);
+						$('#footer-wrapper').height(458);
+						// $('#footer-wrapper #footer #info').height(384);
+					}
 		});
 
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

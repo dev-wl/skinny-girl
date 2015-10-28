@@ -824,9 +824,17 @@ a.indulgence {
 
     #blog .main-heading {
         /*width: 72% !important;*/
-        width: 65% !important;
+        width: 92% !important;
         margin-left: 12px;
         -webkit-margin-start: 0px !important;
+    }
+
+    .retailer {
+        width: 100% !important;
+    }
+
+    .screen-reader-response {
+        width: 81%;
     }
 }
 
@@ -1376,6 +1384,14 @@ img.wp-post-image {
     .wff-fb-item {
         overflow: initial !important;
     }
+
+    .screen-reader-response {
+        width: 74%;
+    }
+
+    #blog .main-heading h1 {
+        width: 95% !important;
+    }
 }
 
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) { 
@@ -1417,7 +1433,7 @@ img.wp-post-image {
     }
 
     #footer-wrapper img {
-        display: none;
+        /*display: none;*/
     }
 
     #footer-wrapper #footer p.about {

@@ -107,7 +107,7 @@
 
 				if (navigator.userAgent.match(/iPad/i) != null && $(window).height() > $(window).width()) { //ipad portrait
 						$('#s4').height(394);
-						$('#footer-wrapper').height(458);
+						$('#footer-wrapper').height(447);
 						// $('#footer-wrapper #footer #info').height(384);
 					}
 		});

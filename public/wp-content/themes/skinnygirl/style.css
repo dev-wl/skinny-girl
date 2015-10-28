@@ -542,6 +542,10 @@ a.indulgence {
       color: #000;
       height: 13%;
     }
+
+    #twitter-widget-0 {
+        margin-left: 30px;
+    }
 }
 
 @media (max-width: 1500px) {

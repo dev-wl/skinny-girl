@@ -41,7 +41,7 @@ get_header();
             foreach ( $myposts as $post ) : {
                 setup_postdata( $post );
                 if($i == 0): ?>
-                    <div class="product-row">
+                    <div class="product-row row-retailer">
                 <?php endif; ?>
                 <?php $i++; ?>
                 <?php $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
@@ -62,7 +62,7 @@ get_header();
                         </div>
                     <?php } if($i == 3 || end($myposts) == $post): {
                             $i = 0; ?>
-                        </div><div class="clearfix"></div>
+                        </div>
                         <?php } endif; ?>
                 <?php endforeach;
                 wp_reset_postdata(); ?>
@@ -113,6 +113,10 @@ get_header();
             }
         }
     });
+
+    $('.product-row:not(:last-child)').toggleClass('row-retailer');
+    $('.product-row:last-child .retailer:last-child').css('clear', 'both')
+
     
 </script>        
 <?php get_footer(); ?>

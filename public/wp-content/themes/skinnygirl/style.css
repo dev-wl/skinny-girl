@@ -850,6 +850,16 @@ a.indulgence {
 
 }
 
+@media screen and (max-width: 568px) and (orientation: landscape) { /*5iph landscape*/
+    #blog .content .main-heading h1 {
+        width: 100% !important;
+    }
+
+    .retailer {
+        width: 50% !important;
+    }
+}
+
 .dropdown {
     display: none; }
 
@@ -1735,6 +1745,13 @@ p.info {
 .product-row {
     width: 100%;
 	margin-bottom:50px;
+}
+
+.row-retailer:after {
+    content: "";
+    display: block;
+    width: 100%;
+    clear: both;
 }
 
 .square {

@@ -395,6 +395,10 @@
 			$('#preloader div#preload_wrap').css('margin', '15% auto');
 		} 
 	});
+
+	setTimeout(function() {
+		$('#menu-wrapper').animate({opacity:1}, 1000);
+	}, 1000);
 </script>
 	
 	<div id="darkener"></div>

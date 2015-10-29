@@ -107,10 +107,16 @@
 
 				if (navigator.userAgent.match(/iPad/i) != null && $(window).height() > $(window).width()) { //ipad portrait
 						$('#s4').height(394);
-						$('#footer-wrapper').height(447);
+						$('#footer-wrapper').height(445);
 						// $('#footer-wrapper #footer #info').height(384);
 					}
 		});
+
+		if (navigator.userAgent.match(/iPad/i) != null && $(window).height() > $(window).width()) { //ipad portrait
+						$('#s4').height(394);
+						$('#footer-wrapper').height(445);
+						// $('#footer-wrapper #footer #info').height(384);
+					}
 
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

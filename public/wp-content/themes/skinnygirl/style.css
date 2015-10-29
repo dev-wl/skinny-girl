@@ -810,6 +810,7 @@ a.indulgence {
     #twitter-widget-0 {
         float: none;
         width: 100% !important;
+        margin-left: 0px !important;
     }
 
     .wff-feed-wrapper {

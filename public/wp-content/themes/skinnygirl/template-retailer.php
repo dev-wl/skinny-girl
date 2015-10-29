@@ -103,6 +103,10 @@ get_header();
                 // $('body .global-wrapper #s0').css('margin-bottom', '-' + parseInt(res) + (-100) + 'px');
             }
         } else {
+            var iPad = false;
+            if (navigator.userAgent.match(/iPad/i) != null ) {
+                iPad = true;
+            }
             if(blog_height < 100) {
                 res = footer_height;
                 $('body .global-wrapper #s0').css('margin-bottom', '-' + parseInt(res) + 'px');
@@ -111,11 +115,13 @@ get_header();
             } else {
                 $('body .global-wrapper #s0.section').css('height', 'auto');
             }
+
+            if ((iPad && $(window).height() > $(window).width()) || (!iPad && $(window).width() > $(window).height())) {
+                $('.product-row:not(:last-child)').toggleClass('row-retailer');
+                $('.product-row:last-child .retailer:last-child').css('clear', 'both');
+            }
         }
     });
-
-    $('.product-row:not(:last-child)').toggleClass('row-retailer');
-    $('.product-row:last-child .retailer:last-child').css('clear', 'both')
 
     
 </script>        

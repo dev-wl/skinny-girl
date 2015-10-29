@@ -594,7 +594,7 @@ a.indulgence {
     }
 
     #preload_wrap {
-      margin: 27% auto !important;
+      margin: 27% auto;
     }
 
     .letters-wrapper {
@@ -1132,7 +1132,7 @@ a.page-numbers:hover, span.page-numbers.current {
 #blog .main-heading {
     /*width: 75%;*/
     width: 75%;
-    -webkit-margin-start: 84px;
+    /*-webkit-margin-start: 84px;*/
 }
 
 #blog .main-heading h1 {

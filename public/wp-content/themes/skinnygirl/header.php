@@ -15,6 +15,18 @@
 <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
 <script type="text/javascript">stLight.options({publisher: "5eb19ab6-d271-4b96-a7cc-6da9b827c1d2", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
     <!--End Share This-->
+
+    <script>
+		$(document).ready(function() {
+			if(navigator.userAgent.toLowerCase().indexOf('safari') > -1) {
+				$('#preloader div#preload_wrap').css('margin', '15% auto');
+			}
+		}); 
+
+		if(navigator.userAgent.toLowerCase().indexOf('safari') > -1) {
+			$('#preloader div#preload_wrap').css('margin', '15% auto');
+		}
+	</script>
     </head>
 <body>
 <script>
@@ -390,15 +402,17 @@
 		if($(window).width() >= 238 && $(window).width() < 580 && $(window).height() >= 239 && $(window).height() <= 360) {
 			$('.sliding-menu a').css({'font-size': '15px', 'line-height': '22px'});
 		}
-
-		if(navigator.userAgent.toLowerCase().indexOf('safari') > -1) {
-			$('#preloader div#preload_wrap').css('margin', '15% auto');
-		} 
 	});
 
 	setTimeout(function() {
 		$('#menu-wrapper').animate({opacity:1}, 1000);
 	}, 1000);
+
+	setTimeout(function() {
+		//double-check for sari
+		if($('#menu-wrapper').css('opacity') != 1)
+			$('#menu-wrapper').animate({opacity:1}, 1000);
+	}, 2000);
 </script>
 	
 	<div id="darkener"></div>

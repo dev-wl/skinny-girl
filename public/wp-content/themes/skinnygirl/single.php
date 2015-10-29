@@ -62,7 +62,9 @@ body.fixed-menu #head-wrapper {
 		if($('.content').find('p:nth-child(2) a img').length == 1) {
 			$('div.main-heading').insertAfter($('.content p')[0]);
 			$('div.main-heading').css('width', '100%');
-		} else if(navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
+		} else if($('.content').find('p:nth-child(2) a img').length == 0) {
+			$('#blog .main-heading').css('-webkit-margin-start', '84px');
+		}else if(navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
 			$('#blog .main-heading').css('width', '65%');
 		}
 

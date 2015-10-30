@@ -12,6 +12,12 @@ get_header();
     body.fixed-menu #head-wrapper {
         display: block !important;
     }
+    /*ipad portrait*/
+    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+        .content .product-row {
+            margin-left: 50px;
+        }
+    }
 </style>
 
 

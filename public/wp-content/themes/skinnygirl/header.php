@@ -426,7 +426,7 @@
 	}, 2000);
 </script>
 	
-	<div id="darkener"></div>
+	<!--<div id="darkener"></div>
 
 		<div id="popup_wrap">
 
@@ -463,7 +463,7 @@
 				</form>
 			</div>
 		</div>
-		</div>
+		</div>-->
 	
 
 	<div id="preloader">

@@ -38,6 +38,8 @@
 			$('#preloader div#preload_wrap').css('margin', '15% auto');
 		}
 	</script>
+
+	<?php wp_head(); ?>
     </head>
 <body>
 <script>

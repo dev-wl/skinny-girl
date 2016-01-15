@@ -1934,6 +1934,7 @@ a.wff-link-tab{text-decoration:none !important;}
     /*width: 81%;*/
     width: 42%;
     padding-top: 0px;
+    position: relative;
     /*padding-bottom: 76px;*/
 }
 

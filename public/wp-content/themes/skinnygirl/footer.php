@@ -8,6 +8,8 @@
             <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 						
 							<?php echo do_shortcode('[facebook-feed]'); ?> <div class="clearfix"></div>
+
+							<?php echo do_shortcode('[wlpowered]'); ?>
 						</div>
 
 					</div>
@@ -24,6 +26,8 @@
 
 			<div id="h4"></div>
 		</div>
+		<?php echo do_shortcode('[wlpowered-markup]'); ?>
+		<?php echo do_shortcode('[wlpowered-script]'); ?>
 
 		<script>
 			infoHeight = $('#footer-wrapper #footer #info').height();
@@ -32,7 +36,7 @@
 				h = $('#footer-wrapper #footer #info').height();
 				// $('#s4').height(63);
 				// $('#s4').height(350);
-				$('#s4').height(383);
+				$('#s4').height(389);
 
 
 				if(mobile && window.mainPage != null) {
@@ -127,5 +131,7 @@
 		</script>
         <!--JustUno-->
 		<script type="text/javascript" charset="utf-8">var ju_num="3836E8A2-80FE-4473-BD03-A2A18EB8E0E3";var asset_host=(("https:"==document.location.protocol)?"https":"http")+'://d2j3qa5nc37287.cloudfront.net/';(function() {var s=document.createElement('script');s.type='text/javascript';s.async=true;s.src=asset_host+'coupon_code1.js';var x=document.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);})();</script><!--End_JustUno-->
+
+		<?php wp_footer(); ?>
 	</body>
 </html>
